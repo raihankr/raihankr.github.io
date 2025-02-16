@@ -1,0 +1,6 @@
+- 👋 Hi, I’m Raihan
+- I'm a 16 y.o boy
+- I'm a 10th grade student
+- I live in Bandung, Indonesia
+- I'm interested in mobile app and web app development
+- You can find me on Instagram @hxnrkr!
