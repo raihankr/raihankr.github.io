@@ -592,11 +592,23 @@
   .top-\[20\%\] {
     top: 20%;
   }
+  .top-\[50\%\] {
+    top: 50%;
+  }
+  .top-\[60\%\] {
+    top: 60%;
+  }
   .top-\[70\%\] {
     top: 70%;
   }
   .right-\[10\%\] {
     right: 10%;
+  }
+  .right-\[10vh\] {
+    right: 10vh;
+  }
+  .right-\[10vw\] {
+    right: 10vw;
   }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
@@ -604,8 +616,23 @@
   .bottom-\[30\%\] {
     bottom: 30%;
   }
+  .bottom-\[35vh\] {
+    bottom: 35vh;
+  }
+  .bottom-\[37vh\] {
+    bottom: 37vh;
+  }
+  .bottom-\[38vh\] {
+    bottom: 38vh;
+  }
+  .bottom-\[3vh\] {
+    bottom: 3vh;
+  }
   .bottom-\[40\%\] {
     bottom: 40%;
+  }
+  .bottom-\[40vh\] {
+    bottom: 40vh;
   }
   .bottom-\[100\%\] {
     bottom: 100%;
@@ -847,14 +874,29 @@
   .h-24 {
     height: calc(var(--spacing) * 24);
   }
+  .h-\[7\%\] {
+    height: 7%;
+  }
   .h-\[10\%\] {
     height: 10%;
+  }
+  .h-\[15vh\] {
+    height: 15vh;
+  }
+  .h-\[18vh\] {
+    height: 18vh;
   }
   .h-\[20\%\] {
     height: 20%;
   }
+  .h-\[20vh\] {
+    height: 20vh;
+  }
   .h-\[30\%\] {
     height: 30%;
+  }
+  .h-\[30vh\] {
+    height: 30vh;
   }
   .h-screen {
     height: 100vh;
@@ -1415,8 +1457,14 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .overflow-scroll {
+    overflow: scroll;
+  }
   .overflow-x-hidden {
     overflow-x: hidden;
+  }
+  .overflow-y-scroll {
+    overflow-y: scroll;
   }
   .scroll-auto {
     scroll-behavior: auto;
