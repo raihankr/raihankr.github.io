@@ -9,40 +9,55 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
-<body class="overflow-x-hidden max-w-[1200px] mx-auto">
+<body class="overflow-x-hidden mx-auto">
   <!-- Navbar -->
   <nav
-    class="fixed centerx translate-y-4 w-[90%] h-12 content-center px-4 bg-[#fff8] rounded-full border border-white border-opacity-20 backdrop-blur-md">
+    class="fixed centerx translate-y-4 w-[90%] h-12 content-center px-4 bg-[#fff8] z-50 rounded-full border border-white border-opacity-20 backdrop-blur-md">
     <p class="text-lg font-bold">Han &bullet; <span class="font-normal">Software Enthusiast</span></p>
   </nav>
 
   <!-- Hero -->
-  <section class="overflow-y-scroll w-full h-screen snap-mandatory snap-y">
-    <div class="relative h-screen w-svw snap-center">
+  <section id="hero" class="overflow-y-scroll w-full h-screen snap-mandatory snap-y scrollbar-hide">
+    <div class="relative h-screen w-svw snap-start">
       <!-- Headlines -->
       <div class="absolute top-[60%] px-8 w-svw">
-        <h1 class="absolute bottom-[100%] text-4xl font-poppins">Turning Ideas <br> Into Digital Reality</h1>
-        <h2 class="inline px-2 text-sm bg-white rounded-2xl py-05 -z-10 font-poppins">Raihan Khairul Rochman</h2>
+        <h1 class="absolute bottom-[100%] text-4xl font-poppins">Turning Ideas <br> Into Digital
+          Reality</h1>
+        <h2 class="inline px-2 text-sm bg-white rounded-2xl -z-10 font-poppins">Raihan Khairul Rochman</h2>
       </div>
     </div>
 
-    <div class="relative h-screen bg-red-500 w-svw snap-center">
-      a
+    <div class="relative h-screen w-svw snap-start">
+      <!-- Summary -->
+      <div class="absolute bottom-[40%] px-8 w-svw">
+        <h2 class="block px-2 text-sm text-justify text-white -z-10 font-poppins">A software engineering student at SMKN 4 Bandung and
+          machine learning enthusiast. I’ve been learning about programming since middle school and I have a good
+          interest in learning and adapting to new technologies. Currently, I have made some projects in web development
+          and game development. I’m looking forward to create mobile application and machine learning projects. My goal
+          is to create innovative programs and solving in-real-life’s problem.
+        </h2>
+      </div>
     </div>
 
     <!-- Background -->
-    <div class="fixed top-0 bg-gradient-to-b -z-20 h-svh w-svw from-sky-400 to-sky-100"></div>
+    <div id="hero-background" class="fixed top-0 bg-gradient-to-b from-sky-400 -z-50 h-svh w-svw to-sky-100"></div>
 
     <!-- Landscape -->
-    <img src="image/Landscape.svg" alt="Landscape" class="object-cover fixed bottom-0 h-[30vh]">
+    <img src="image/Landscape.svg" alt="Landscape" class="object-cover fixed -bottom-1 h-[30vh] pointer-events-none">
 
     <!-- Hot Air Balloon -->
-    <img src="image/Hot Air Balloon.svg" alt="Hot Air Balloon" class="fixed bottom-[35vh] right-[10vw] h-[18vh]">
+    <img id="hot-air-balloon" src="image/Hot Air Balloon.svg" alt="Hot Air Balloon"
+      class="fixed bottom-[60svh] left-[10vw] -z-10 h-[18vh] pointer-events-none">
 
-    <img src="image/Sun.svg" alt="Sun" class="fixed top-[20%] left-[20%] h-[10%]">
+    <!-- Sun -->
+    <img id="sun" src="image/Sun.svg" alt="Sun" class="fixed -z-40 top-[20svh] right-[20%] h-20 pointer-events-none">
+    
+    <!-- Moon -->
+    <img id="moon" src="image/Moon.svg" alt="Moon" class="fixed -z-40 top-[20svh] right-[20%] h-20 pointer-events-none">
   </section>
 
   <script src="/script/global.js"></script>
+  <script src="/script/index.js" type="module"></script>
 </body>
 
 </html>
