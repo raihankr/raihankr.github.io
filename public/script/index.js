@@ -10,7 +10,7 @@ const skyColorTop = d3.interpolateRgb('#00bcff', '#0A2342');
 const skyColorBottom = d3.interpolateRgb('white', '#3E1F47');
 
 hero.addEventListener('scroll', (event) => {
-  const scrollPercentage = hero.scrollTop / window.outerHeight;
+  const scrollPercentage = hero.scrollTop / (window.outerHeight * 9 / 10);
 
   var bgColorTop = skyColorTop(scrollPercentage);
   heroBackground.style.setProperty('--tw-gradient-from', bgColorTop);
@@ -18,9 +18,9 @@ hero.addEventListener('scroll', (event) => {
   var bgColorBottom = skyColorBottom(scrollPercentage);
   heroBackground.style.setProperty('--tw-gradient-to', bgColorBottom);
 
-  hotAirBalloon.style.bottom = (1 - scrollPercentage) * 60 + 'svh';
+  hotAirBalloon.style.translate = '0 ' + Math.min((scrollPercentage) * 100, 200) + 'vh';
   
-  sun.style.translate = `${d3.easeCubicOut(scrollPercentage) * -200}% ${scrollPercentage * 100}svh`;
+  sun.style.translate = `${d3.easeCubicOut(scrollPercentage) * -200}% ${scrollPercentage * 100}vh`;
   
-  moon.style.translate = `${Math.max((1 - d3.easeCubicIn(scrollPercentage)) * 200, 0)}% ${Math.max((1 - (scrollPercentage)) * 100, 0)}svh`;
+  moon.style.translate = `${Math.max((1 - d3.easeCubicIn(scrollPercentage)) * 200, 0)}% ${Math.max((1 - (scrollPercentage)) * 100, 0)}vh`;
 });
