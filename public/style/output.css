@@ -589,23 +589,14 @@
   .top-\[20\%\] {
     top: 20%;
   }
-  .top-\[20svh\] {
-    top: 20svh;
-  }
   .top-\[60\%\] {
     top: 60%;
-  }
-  .top-\[100svh\] {
-    top: 100svh;
   }
   .right-\[20\%\] {
     right: 20%;
   }
   .-bottom-1 {
     bottom: calc(var(--spacing) * -1);
-  }
-  .bottom-0 {
-    bottom: calc(var(--spacing) * 0);
   }
   .bottom-\[40\%\] {
     bottom: 40%;
@@ -627,9 +618,6 @@
   }
   .-z-10 {
     z-index: calc(10 * -1);
-  }
-  .-z-20 {
-    z-index: calc(20 * -1);
   }
   .-z-40 {
     z-index: calc(40 * -1);
@@ -745,9 +733,6 @@
       max-width: 96rem !important;
     }
   }
-  .m-1 {
-    margin: calc(var(--spacing) * 1);
-  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -841,26 +826,11 @@
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
-  .h-1 {
-    height: calc(var(--spacing) * 1);
-  }
-  .h-2 {
-    height: calc(var(--spacing) * 2);
-  }
-  .h-6 {
-    height: calc(var(--spacing) * 6);
-  }
   .h-12 {
     height: calc(var(--spacing) * 12);
   }
   .h-20 {
     height: calc(var(--spacing) * 20);
-  }
-  .h-24 {
-    height: calc(var(--spacing) * 24);
-  }
-  .h-\[10\%\] {
-    height: 10%;
   }
   .h-\[18vh\] {
     height: 18vh;
@@ -868,8 +838,8 @@
   .h-\[30vh\] {
     height: 30vh;
   }
-  .h-\[90\%\] {
-    height: 90%;
+  .h-\[150vh\] {
+    height: 150vh;
   }
   .h-screen {
     height: 100vh;
@@ -885,9 +855,6 @@
   }
   .min-h-screen {
     min-height: 100vh;
-  }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
@@ -990,13 +957,14 @@
     --tw-translate-y: -100%;
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .translate-\[200\%_100vh\] {
+    --tw-translate-x: 200% 100vh;
+    --tw-translate-y: 200% 100vh;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
   .translate-full {
     --tw-translate-x: 100%;
     --tw-translate-y: 100%;
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .translate-x-\[200\%\] {
-    --tw-translate-x: 200%;
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .translate-y-4 {
@@ -1067,9 +1035,6 @@
   }
   .snap-none {
     scroll-snap-type: none;
-  }
-  .snap-y {
-    scroll-snap-type: y var(--tw-scroll-snap-strictness);
   }
   .snap-mandatory {
     --tw-scroll-snap-strictness: mandatory;
@@ -2256,9 +2221,6 @@
   }
   .forced-color-adjust-none {
     forced-color-adjust: none;
-  }
-  .\[host\:\]port\] {
-    host: ]port;
   }
   .\[k\:K\] {
     k: K;
