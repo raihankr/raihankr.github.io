@@ -586,17 +586,50 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
+  .top-12 {
+    top: calc(var(--spacing) * 12);
+  }
+  .top-96 {
+    top: calc(var(--spacing) * 96);
+  }
   .top-\[20\%\] {
     top: 20%;
   }
+  .top-\[40\%\] {
+    top: 40%;
+  }
+  .top-\[50\%\] {
+    top: 50%;
+  }
+  .top-\[50vh\] {
+    top: 50vh;
+  }
   .top-\[60\%\] {
     top: 60%;
+  }
+  .top-\[60vh\] {
+    top: 60vh;
+  }
+  .top-\[70\%\] {
+    top: 70%;
+  }
+  .top-\[70vh\] {
+    top: 70vh;
+  }
+  .top-\[80vh\] {
+    top: 80vh;
+  }
+  .top-\[100vh\] {
+    top: 100vh;
   }
   .right-\[20\%\] {
     right: 20%;
   }
   .-bottom-1 {
     bottom: calc(var(--spacing) * -1);
+  }
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
   }
   .bottom-\[40\%\] {
     bottom: 40%;
@@ -606,6 +639,9 @@
   }
   .bottom-\[100\%\] {
     bottom: 100%;
+  }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
   }
   .left-\[10vw\] {
     left: 10vw;
@@ -838,8 +874,26 @@
   .h-\[30vh\] {
     height: 30vh;
   }
+  .h-\[50\%\] {
+    height: 50%;
+  }
+  .h-\[100vh\] {
+    height: 100vh;
+  }
   .h-\[150vh\] {
     height: 150vh;
+  }
+  .h-\[200vh\] {
+    height: 200vh;
+  }
+  .h-\[250vh\] {
+    height: 250vh;
+  }
+  .h-lvh {
+    height: 100lvh;
+  }
+  .h-lvw {
+    height: 100lvw;
   }
   .h-screen {
     height: 100vh;
@@ -865,8 +919,14 @@
   .w-full {
     width: 100%;
   }
+  .w-lvh {
+    width: 100lvh;
+  }
   .w-screen {
     width: 100vw;
+  }
+  .w-svh {
+    width: 100svh;
   }
   .w-svw {
     width: 100svw;
@@ -957,6 +1017,16 @@
     --tw-translate-y: -100%;
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .translate-\[12px_12px\] {
+    --tw-translate-x: 12px 12px;
+    --tw-translate-y: 12px 12px;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-\[200\%_0\] {
+    --tw-translate-x: 200% 0;
+    --tw-translate-y: 200% 0;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
   .translate-\[200\%_100vh\] {
     --tw-translate-x: 200% 100vh;
     --tw-translate-y: 200% 100vh;
@@ -967,8 +1037,16 @@
     --tw-translate-y: 100%;
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .translate-x-\[200\%\] {
+    --tw-translate-x: 200%;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
   .translate-y-4 {
     --tw-translate-y: calc(var(--spacing) * 4);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-y-\[100vh\] {
+    --tw-translate-y: 100vh;
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-z-px {
@@ -998,6 +1076,9 @@
   }
   .scale-none {
     scale: none;
+  }
+  .rotate-90 {
+    rotate: 90deg;
   }
   .rotate-none {
     rotate: none;
