@@ -10,7 +10,7 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-  res.send('Hello, world!');
+  res.render('index')
 });
 
 const server = app.listen(PORT, () => {
