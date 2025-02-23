@@ -1,3 +1,5 @@
 Personal\ Site.code-workspace
 .vscode
 .vercel
+node_modules
+*.env
