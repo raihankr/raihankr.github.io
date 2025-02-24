@@ -1,40 +1,48 @@
+doctype html
 html
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title
+    title Raihan Khairul Rochman | Portoflio | Home
     link(rel="stylesheet" href="/style/output.css")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js")
-  body.overflow-x-hidden.mx-auto
-    // Navbar2
-    nav.fixed.z-50.content-center.px-4.h-12.rounded-full.border.border-white.border-opacity-20.translate-y-4.centerx.backdrop-blur-md(class='w-[90%] bg-[#fff8]')
-      p.text-lg.font-bold.leading-12 Han &bullet; 
-        span.font-normal Software Enthusiast
-    main.overflow-x-hidden.overflow-y-scroll.relative.w-full.h-screen.scrollbar-hide
-      .relative.h-screen.w-svw.snap-start
+
+  body(class="overflow-x-hidden mx-auto")
+    // Navbar
+    nav(class="fixed z-50 content-center px-4 h-12 rounded-full border border-white border-opacity-20 translate-y-4 centerx backdrop-blur-md w-[90%] bg-[#fff8]")
+      p(class="text-lg font-bold leading-12") Han &bullet; 
+        span(class="font-normal") Software Enthusiast
+
+    main(class="overflow-x-hidden overflow-y-scroll relative w-full h-screen scrollbar-hide")
+      div(class="relative h-screen w-svw snap-start")
         // Headlines
-        .absolute.px-8.w-svw(class='top-[60%]')
-          h1.absolute.text-4xl.font-poppins(class='bottom-[100%]') Turning Ideas <br> Into Digital Reality
-          h2.inline.px-2.text-sm.bg-white.rounded-2xl.-z-10.font-poppins Raihan Khairul Rochman
-      .relative.w-svw.snap-start(class='h-[150vh]')
+        div(class="absolute px-8 w-svw top-[60%]")
+          h1(class="absolute text-4xl font-poppins bottom-[100%]") Turning Ideas <br> Into Digital Reality
+          h2(class="inline px-2 text-sm bg-white rounded-2xl -z-10 font-poppins") Raihan Khairul Rochman
+
+      div(class="relative w-svw snap-start h-[150vh]")
         // Summary
-        .absolute.px-8.w-svw(class='top-[50vh]')
-          h2.block.px-2.text-sm.text-justify.text-white.-z-10.font-poppins A software engineering student at SMKN 4 Bandung and machine learning enthusiast. I’ve been learning about programming since middle school and I have a good interest in learning and adapting to new technologies. Currently, I have made some projects in web development and game development. I’m looking forward to create mobile application and machine learning projects. My goal is to create innovative programs and solving in-real-life’s problem.
-      #hero
+        div(class="absolute px-8 w-svw top-[50vh]")
+          h2(class="block px-2 text-sm text-justify text-white -z-10 font-poppins") A software engineering student at SMKN 4 Bandung and machine learning enthusiast. I’ve been learning about programming since middle school and I have a good interest in learning and adapting to new technologies. Currently, I have made some projects in web development and game development. I’m looking forward to create mobile application and machine learning projects. My goal is to create innovative programs and solving in-real-life’s problem.
+
+      section#hero
         // Background
-        #hero-background.fixed.top-0.bg-gradient-to-b.from-sky-400.-z-50.h-svh.w-svw.to-sky-100
+        #hero-background(class="fixed top-0 bg-gradient-to-b from-sky-400 -z-50 h-svh w-svw to-sky-100")
         // Landscape
-        img#landscape.object-cover.fixed.-bottom-1.pointer-events-none(src="image/Landscape.svg" alt="Landscape" class='h-[30vh]')
+        img#landscape(class="object-cover fixed -bottom-1 pointer-events-none h-[30vh]")(src="image/Landscape.svg" alt="Landscape")
         // Stars
-        img#stars.object-cover.fixed.top-0.left-0.rotate-90.pointer-events-none.h-lvw.w-svh.-z-40(src="image/Stars.svg" alt="Stars")
+        img#stars(class="object-cover fixed top-0 left-0 rotate-90 pointer-events-none h-lvw w-svh -z-40")(src="image/Stars.svg" alt="Stars")
         // Hot Air Balloon
-        img#hot-air-balloon.fixed.pointer-events-none.-z-10(src="image/Hot Air Balloon.svg" alt="Hot Air Balloon" class='bottom-[60svh] left-[10vw] h-[18vh]')
+        img#hot-air-balloon(class="fixed pointer-events-none -z-10 bottom-[60svh] left-[10vw] h-[18vh]")(src="image/Hot Air Balloon.svg" alt="Hot Air Balloon")
         // Sun
-        img#sun.fixed.h-20.pointer-events-none.-z-40(src="image/Sun.svg" alt="Sun" class='top-[20%] right-[20%]')
+        img#sun(class="fixed h-20 pointer-events-none -z-40 top-[20%] right-[20%]")(src="image/Sun.svg" alt="Sun")
         // Moon
-        img#moon.fixed.h-20.pointer-events-none.-z-40(src="image/Moon.svg" alt="Moon" class='top-[20%] right-[20%] translate-y-[100vh] translate-x-[200%]')
-      section#skills.block.pt-48.min-h-screen(class='bg-[#003030]')
-        h1#skills-title.hidden.px-8.text-3xl.text-5xl.text-white.font-bebas My skills
+        img#moon(class="fixed h-20 pointer-events-none -z-40 top-[20%] right-[20%] translate-y-[100vh] translate-x-[200%]")(src="image/Moon.svg" alt="Moon")
+
+      section#skills(class="block pt-48 px-8 min-h-screen bg-[#003030]")
+        h1#skills-title(class="hidden text-3xl text-white font-lobster") My skills
+        h2#skills-web(class="text-7xl text-white font-bebas") Web <br> Development
+
     script(src="https://code.jquery.com/jquery-3.7.1.min.js")
     script(src="/script/global.js")
     script(src="/script/index.js" type="module")

@@ -722,6 +722,9 @@
   .font-bebas {
     font-family: var(--font-bebas);
   }
+  .font-lobster {
+    font-family: var(--font-lobster);
+  }
   .font-poppins {
     font-family: var(--font-poppins);
   }
@@ -736,6 +739,10 @@
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
+  }
+  .text-7xl {
+    font-size: var(--text-7xl);
+    line-height: var(--tw-leading, var(--text-7xl--line-height));
   }
   .text-lg {
     font-size: var(--text-lg);
