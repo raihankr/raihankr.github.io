@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tailwindcss": "npx @tailwindcss/cli -i public/style/input.css -o public/style/output.css --watch",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
+    "tailwindcss": "npx @tailwindcss/cli -i public/stylesheets/input.css -o public/stylesheets/output.css --watch"
   },
   "author": "Raihan Khairul Rochman",
   "license": "ISC",
@@ -14,7 +14,11 @@
     "@tailwindcss/cli": "^4.0.6",
     "express": "^4.21.2",
     "pug": "^3.0.3",
-    "tailwindcss": "^4.0.6"
+    "tailwindcss": "^4.0.6",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
