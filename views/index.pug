@@ -29,19 +29,21 @@ html
         // Background
         #hero-background(class="fixed top-0 bg-gradient-to-b from-sky-400 -z-50 h-svh w-svw to-sky-100")
         // Landscape
-        img#landscape(class="object-cover fixed -bottom-1 pointer-events-none h-[30vh]" src="image/Landscape.svg" alt="Landscape")
+        img#landscape(class="object-cover fixed -bottom-1 pointer-events-none h-[30vh]" src="/images/Landscape.svg" alt="Landscape")
         // Stars
-        img#stars(class="object-cover fixed top-0 left-0 rotate-90 pointer-events-none h-lvw w-svh -z-40" src="image/Stars.svg" alt="Stars")
+        img#stars(class="object-cover fixed top-0 left-0 rotate-90 pointer-events-none h-lvw w-svh -z-40" src="/images/Stars.svg" alt="Stars")
         // Hot Air Balloon
-        img#hot-air-balloon(class="fixed pointer-events-none -z-10 bottom-[60svh] left-[10vw] h-[18vh]" src="image/Hot Air Balloon.svg" alt="Hot Air Balloon")
+        img#hot-air-balloon(class="fixed pointer-events-none -z-10 bottom-[60svh] left-[10vw] h-[18vh]" src="/images/Hot Air Balloon.svg" alt="Hot Air Balloon")
         // Sun
-        img#sun(class="fixed h-20 pointer-events-none -z-40 top-[20%] right-[20%]" src="image/Sun.svg" alt="Sun")
+        img#sun(class="fixed h-20 pointer-events-none -z-40 top-[20%] right-[20%]" src="/images/Sun.svg" alt="Sun")
         // Moon
-        img#moon(class="fixed h-20 pointer-events-none -z-40 top-[20%] right-[20%] translate-y-[100vh] translate-x-[200%]" src="image/Moon.svg" alt="Moon")
+        img#moon(class="fixed h-20 pointer-events-none -z-40 top-[20%] right-[20%] translate-y-[100vh] translate-x-[200%]" src="/images/Moon.svg" alt="Moon")
 
       section#skills(class="block pt-48 px-8 min-h-screen bg-[#003030]")
         h1#skills-title(class="hidden text-3xl text-white font-lobster") My skills
-        h2#skills-web(class="text-7xl text-white font-bebas")
+
+        h2(class="text-7xl text-white font-bebas")!= skills.web_dev.title
+        p(class="")!= skills.web_dev.description
 
     script(src="https://code.jquery.com/jquery-3.7.1.min.js")
     script(src="/javascripts/index.js" type="module")
