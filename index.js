@@ -23,9 +23,9 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-const server = app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// const server = app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
 
 // Watch the contents directory for changes
 const directoryPath = path.join(__dirname, 'contents');
