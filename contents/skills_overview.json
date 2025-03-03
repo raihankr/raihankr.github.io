@@ -1,5 +1,5 @@
-{
-  "web_dev": {
+[
+  {
     "title": "Web <br> Development",
     "description": "Have experience in building backend and frontend of websites. Including custom server and API building, as well as making interactive and unique user interfaces.",
     "tags": [
@@ -24,7 +24,7 @@
     "bg_image": null,
     "decoration": null
   },
-  "game_dev": {
+  {
     "title": "Game <br> Development",
     "description": "Bringing unique and fun experiences through video games, with experience in 2D game development, as well as game design and game mechanics.",
     "tags": [
@@ -35,7 +35,7 @@
     "bg_image": null,
     "decoration": null
   },
-  "machine_learning": {
+  {
     "title": "Machine <br> Learning",
     "description": "Having knowledge in machine learning and data science, including data analysis, data visualization, and machine learning model building.",
     "tags": [
@@ -52,7 +52,7 @@
     "bg_image": null,
     "decoration": null
   },
-  "mobile_dev": {
+  {
     "title": "Mobile <br> Development",
     "description": "Having knowledge and bare experience in making multiplatform mobile application using React Native.",
     "tags": [
@@ -66,7 +66,7 @@
     "bg_image": null,
     "decoration": null
   },
-  "misc": {
+  {
     "title": "Miscellaneous",
     "description": "Other skills that I have, including graphic design, devops, and database management.",
     "tags": [
@@ -85,4 +85,4 @@
     "bg_image": null,
     "decoration": null
   }
-}
+]

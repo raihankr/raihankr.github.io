@@ -20,5 +20,4 @@ function reloadContent(eventType, filename) {
   }
 }
 
-
 module.exports = contents;

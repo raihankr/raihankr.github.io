@@ -9,15 +9,15 @@ html
 
   body(class="overflow-x-hidden mx-auto")
     // Navbar
-    nav(class="fixed z-50 content-center px-4 h-12 rounded-full border border-white border-opacity-20 translate-y-4 centerx backdrop-blur-md w-[90%] bg-[#fff8]")
+    nav(class="fixed z-50 content-center px-4 h-12 rounded-full border border-white border-opacity-20 translate-y-4 centerx backdrop-blur-md w-9/10 bg-[#fff8]")
       p(class="text-lg font-bold leading-12") Han &bullet; 
         span(class="font-normal") Software Enthusiast
 
     main(class="overflow-x-hidden overflow-y-scroll relative w-full h-screen scrollbar-hide")
       div(class="relative h-screen w-svw snap-start")
         // Headlines
-        div(class="absolute px-8 w-svw top-[60%]")
-          h1(class="absolute text-4xl font-poppins bottom-[100%]") Turning Ideas <br> Into Digital Reality
+        div(class="absolute px-8 w-svw top-3/5")
+          h1(class="absolute bottom-full text-4xl font-poppins") Turning Ideas <br> Into Digital Reality
           h2(class="inline px-2 text-sm bg-white rounded-2xl -z-10 font-poppins") Raihan Khairul Rochman
 
       div(class="relative w-svw snap-start h-[150vh]")
@@ -27,23 +27,30 @@ html
 
       section#hero
         // Background
-        #hero-background(class="fixed top-0 bg-gradient-to-b from-sky-400 -z-50 h-svh w-svw to-sky-100")
+        div#hero-background(class="fixed top-0 bg-gradient-to-b from-sky-400 -z-50 h-svh w-svw to-sky-100")
         // Landscape
-        img#landscape(class="object-cover fixed -bottom-1 pointer-events-none h-[30vh]" src="/images/Landscape.svg" alt="Landscape")
+        img#landscape(class="object-cover fixed -bottom-1 pointer-events-none h-[30vh]" src="/images/landscape.svg" alt="Landscape")
         // Stars
-        img#stars(class="object-cover fixed top-0 left-0 rotate-90 pointer-events-none h-lvw w-svh -z-40" src="/images/Stars.svg" alt="Stars")
+        img#stars(class="object-cover fixed top-0 left-0 rotate-90 pointer-events-none h-lvw w-svh -z-40" src="/images/stars.svg" alt="Stars")
         // Hot Air Balloon
-        img#hot-air-balloon(class="fixed pointer-events-none -z-10 bottom-[60svh] left-[10vw] h-[18vh]" src="/images/Hot Air Balloon.svg" alt="Hot Air Balloon")
+        img#hot-air-balloon(class="fixed pointer-events-none -z-10 bottom-[60svh] left-[10vw] h-[18vh]" src="/images/hot_air_balloon.svg" alt="Hot Air Balloon")
         // Sun
-        img#sun(class="fixed h-20 pointer-events-none -z-40 top-[20%] right-[20%]" src="/images/Sun.svg" alt="Sun")
+        img#sun(class="fixed h-20 pointer-events-none -z-40 top-1/5 right-1/5" src="/images/sun.svg" alt="Sun")
         // Moon
-        img#moon(class="fixed h-20 pointer-events-none -z-40 top-[20%] right-[20%] translate-y-[100vh] translate-x-[200%]" src="/images/Moon.svg" alt="Moon")
+        img#moon(class="fixed h-20 pointer-events-none -z-40 top-1/5 right-1/5 translate-y-[100vh] translate-x-2/1" src="/images/moon.svg" alt="Moon")
 
-      section#skills(class="block pt-48 px-8 min-h-screen bg-[#003030]")
-        h1#skills-title(class="hidden text-3xl text-white font-lobster") My skills
+      section#skills(class="block relative px-8 pt-48 min-h-screen bg-[#003030]")
+        //- h1#skills-title(class="hidden text-3xl text-white font-lobster") My skills
+        //- h2(class="text-7xl text-white font-bebas") skills.web_dev.title
 
-        h2(class="text-7xl text-white font-bebas")!= skills.web_dev.title
-        p(class="")!= skills.web_dev.description
+        div(class="absolute w-4/5 centerx centery aspect-square")
+          div(class="absolute top-0 left-0 z-50 p-8 w-full bg-white rounded-xl border-1 aspect-square")
+            h2(class="text-8xl text-black font-bebas") My <br> Skills
+
+          each skill, index in skills
+            div(class=`absolute left-0 p-8 w-full bg-white rounded-xl border-black border-1 aspect-square ${index ? "" : "rounded-tl-none"}` style=`top: ${-(index+1)*12}px; z-index: ${49-index}`)= index
+              div(class="absolute bottom-full w-8 bg-white rounded-md rounded-b-none border-b-0 left-(--left) p-[1px] aspect-square border-1" style=`--left: ${index*2.2}rem`)
+                div(class="w-full h-full bg-black mask-image-(--icon)" style="--icon: url('/images/chip.svg'); mask-size: cover")
 
     script(src="https://code.jquery.com/jquery-3.7.1.min.js")
     script(src="/javascripts/index.js" type="module")

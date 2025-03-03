@@ -3,26 +3,38 @@
 @import "tailwindcss";
 
 @theme {
-    --font-bebas: 'Bebas Neue', serif;
-    --font-poppins: 'Poppins';
-    --font-montserrat: 'Montserrat';
-    --font-quicksand: 'Quicksand';
-    --font-lobster: 'Lobster';
-    --font-monoton: 'Monoton';
+  --font-bebas: 'Bebas Neue';
+  --font-poppins: 'Poppins';
+  --font-montserrat: 'Montserrat';
+  --font-quicksand: 'Quicksand';
+  --font-lobster: 'Lobster';
+  --font-monoton: 'Monoton';
+  
+  --breakpoint-sm: 481px;
+  --breakpoint-md: 769px;
+  --breakpoint-lg: 1025px;
+  --breakpoint-xl: 1281px;
 }
 
-@layer components {
-    .centerx {
-        @apply left-1/2 -translate-x-1/2;
-    }
-    .centery {
-        @apply top-1/2 -translate-y-1/2;
-    }
-    .scrollbar-hide {
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-    .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-    }
+
+@utility centerx {
+  @apply left-1/2 -translate-x-1/2;
+}
+
+@utility centery {
+  @apply top-1/2 -translate-y-1/2;
+}
+
+@utility mask-image-* {
+  -webkit-mask-image: --value([*]);
+  mask-image: --value([*]);
+}
+
+@utility scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+      @apply hidden;
+  }
 }
