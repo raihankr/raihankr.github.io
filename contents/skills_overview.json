@@ -20,6 +20,7 @@
       "netlify",
       "vercel"
     ],
+    "icon": "/images/globe.svg",
     "color": "white",
     "bg_image": null,
     "decoration": null
@@ -31,6 +32,7 @@
       "godot",
       "pygame"
     ],
+    "icon": "/images/game.svg",
     "color": "white",
     "bg_image": null,
     "decoration": null
@@ -48,6 +50,7 @@
       "jupyter",
       "kaggle"
     ],
+    "icon": "/images/chip.svg",
     "color": "white",
     "bg_image": null,
     "decoration": null
@@ -62,6 +65,7 @@
       "kotlin",
       "expo"
     ],
+    "icon": "/images/mobile.svg",
     "color": "white",
     "bg_image": null,
     "decoration": null
@@ -81,6 +85,7 @@
       "c",
       "cpp"
     ],
+    "icon": "/images/symbol_misc.svg",
     "color": "white",
     "bg_image": null,
     "decoration": null

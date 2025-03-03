@@ -25,9 +25,17 @@
   @apply top-1/2 -translate-y-1/2;
 }
 
-@utility mask-image-* {
+@utility mask-* {
   -webkit-mask-image: --value([*]);
   mask-image: --value([*]);
+}
+
+@utility mask-cover {
+  mask-size: cover;
+}
+
+@utility mask-center {
+  mask-position: center;
 }
 
 @utility scrollbar-hide {

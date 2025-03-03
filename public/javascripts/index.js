@@ -67,3 +67,10 @@ $main.on('scroll', async function () {
 
   // console.log(scrollPercentage);
 });
+
+$('input[name=skills]').on('click', function () {
+  let selectedSkill = +$('input[name=skills]:checked').val();
+
+  $('#skills-folder>*').slice(0, selectedSkill + 1).css('translate', '0 100%');
+  $('#skills-folder>*').slice(selectedSkill + 1).css('translate', '0 0');
+});

@@ -14,7 +14,7 @@ for (let filename in contents) {
 
 function reloadContent(eventType, filename) {
   if (filename) {
-    console.log(`Loading ${filename}`);
+    console.log(`LOAD ${filename}`);
     var basename = path.basename(filename, '.json');
     contents[basename] = JSON.parse(fs.readFileSync(path.join(directoryPath, filename)));
   }

@@ -555,29 +555,17 @@
   .top-3\/5 {
     top: calc(3/5 * 100%);
   }
-  .top-\[20\%\] {
-    top: 20%;
-  }
   .top-\[50vh\] {
     top: 50vh;
   }
-  .top-\[60\%\] {
-    top: 60%;
-  }
   .right-1\/5 {
     right: calc(1/5 * 100%);
-  }
-  .right-\[20\%\] {
-    right: 20%;
   }
   .-bottom-1 {
     bottom: calc(var(--spacing) * -1);
   }
   .bottom-\[60svh\] {
     bottom: 60svh;
-  }
-  .bottom-\[100\%\] {
-    bottom: 100%;
   }
   .bottom-full {
     bottom: 100%;
@@ -672,9 +660,6 @@
   .w-9\/10 {
     width: calc(9/10 * 100%);
   }
-  .w-\[90\%\] {
-    width: 90%;
-  }
   .w-full {
     width: 100%;
   }
@@ -686,10 +671,6 @@
   }
   .translate-x-2\/1 {
     --tw-translate-x: calc(2/1 * 100%);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .translate-x-\[200\%\] {
-    --tw-translate-x: 200%;
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .translate-y-4 {
@@ -745,10 +726,6 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .border-\[\.75px\] {
-    border-style: var(--tw-border-style);
-    border-width: .75px;
-  }
   .border-b-0 {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 0px;
@@ -786,14 +763,11 @@
   .object-cover {
     object-fit: cover;
   }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
   }
   .p-8 {
     padding: calc(var(--spacing) * 8);
-  }
-  .p-\[1px\] {
-    padding: 1px;
   }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
@@ -871,13 +845,28 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
-  .mask-image-\(--icon\) {
+  .transition-transform {
+    transition-property: transform, translate, scale, rotate;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .\[--ss\:0\] {
+    --ss: 0;
+  }
+  .mask-\(--icon\) {
     -webkit-mask-image: var(--icon);
     mask-image: var(--icon);
   }
-  .mask-image-\(--x\) {
-    -webkit-mask-image: var(--x);
-    mask-image: var(--x);
+  .mask-center {
+    mask-position: center;
+  }
+  .mask-cover {
+    mask-size: cover;
+  }
+  .peer-checked\:bg-red-500 {
+    &:is(:where(.peer):checked ~ *) {
+      background-color: var(--color-red-500);
+    }
   }
 }
 @keyframes spin {
