@@ -8,9 +8,14 @@ const $sun = $('#sun');
 const $moon = $('#moon');
 const $landscape = $('#landscape');
 const $skills = $('#skills');
+const $prevSkill = $('#prev-skill');
+const $nextSkill = $('#next-skill');
+const $closeSkill = $('#close-skill');
 
 const skyColorTop = d3.interpolateRgb('#00bcff', '#0A2342');
 const skyColorBottom = d3.interpolateRgb('white', '#3E1F47');
+
+const totalSkills = $('[name=skills]').length;
 
 $main.on('scroll', async function () {
   const scrollPercentage = $main.scrollTop() / window.outerHeight;
@@ -49,7 +54,7 @@ $main.on('scroll', async function () {
   if (scrollPercentage < 2.5) {
     // Show landscapes
     $main.css('background', 'transparent');
-    $hero.find('.fixed').css('display', 'initial');
+    $hero.find('.fixed').css('display', 'fixed');
   } else {
     // Hide landscapes
     $main.css('background', '#003030');
@@ -57,9 +62,46 @@ $main.on('scroll', async function () {
   }
 });
 
-$('input[name=skills]').on('click', function () {
-  let selectedSkill = +$('input[name=skills]:checked').val();
+let selectedSkill = -1;
 
-  $('#skills-folder>*').slice(selectedSkill + 1).css('translate', '0 100%');
-  $('#skills-folder>*').slice(0, selectedSkill + 1).css('translate', '0 0');
+$prevSkill.on('click', function () {
+  $($('[name=skills]')[selectedSkill - 1]).trigger('click');
+});
+
+$nextSkill.on('click', function () {
+  $($('[name=skills]')[selectedSkill + 1]).trigger('click');
+});
+
+$closeSkill.on('click', function () {
+  $('[name=skills]:checked').prop('checked', false);
+  selectedSkill = -1;
+  $skills.trigger('input');
+});
+
+$skills.on('input', function () {
+  selectedSkill = +$('[name=skills]:checked').val();
+
+  if (selectedSkill < 1) {
+    $prevSkill.prop('disabled', true);
+  } else {
+    $prevSkill.prop('disabled', false);
+  }
+  if (selectedSkill > totalSkills - 2) {
+    $nextSkill.prop('disabled', true);
+  } else {
+    $nextSkill.prop('disabled', false);
+  }
+  if (selectedSkill > -1) {
+    $closeSkill.prop('disabled', false);
+    console.log($closeSkill)
+  } else {
+    $closeSkill.prop('disabled', true);
+  }
+
+  if (selectedSkill > -1) {
+    $('#skills-folder>*').slice(selectedSkill + 1).css('translate', '0 100%');
+    $('#skills-folder>*').slice(0, selectedSkill + 1).css('translate', '0 0');
+  } else {
+    $('#skills-folder>*').css('translate', '0 0');
+  }
 });
