@@ -39,8 +39,9 @@ html
         // Moon
         img#moon(class="fixed h-20 pointer-events-none -z-40 top-1/5 right-1/5 translate-y-[100vh] translate-x-2/1" src="/images/moon.svg" alt="Moon")
 
-      form#skills(class="block relative px-8 pt-48 min-h-screen bg-[#003030] [--ss:0]")
-        h2(class="text-7xl text-white font-bebas") What Can <br> I Do?
+      form#skills(class="block relative px-8 pt-48 min-h-[150svh] bg-[#003030] [--ss:0]")
+        h2#skill-title(class="text-7xl text-white font-bebas") What Can <br> I Do?
+
         div(class="block text-right text-white")
           input#prev-skill(type="button" class="button-icon icon-[codicon--arrow-left]" disabled)
           input#next-skill(type="button" class="button-icon icon-[codicon--arrow-right]")
@@ -48,15 +49,17 @@ html
 
         div#skills-folder(class="relative mt-12 w-full aspect-square")
           each skill, index in skills
-            div(class=`absolute left-0 p-4 w-full bg-white rounded-xl border-black transition-transform border-1 aspect-square ${index ? "" : "rounded-tl-none"}` style=`top: ${(index)*12}px; z-index: ${50+index}`)
+            div(class=`absolute left-0 p-8 w-full bg-white rounded-xl border-black transition-transform duration-400 border-1 aspect-square ${index ? "" : "rounded-tl-none"}` style=`top: ${(index)*12}px; z-index: ${50+index}`)
               label(for="skills-"+index class="absolute bottom-full p-1 w-12 bg-white rounded-md rounded-b-none border-b-0 left-(--left) aspect-square border-1" style=`--left: ${index*3}rem`)
                 input(id="skills-"+index value=index type="radio" name="skills" class="hidden peer")
                 span(class=`w-full h-full text-black peer-checked:text-red-500 ${skill.icon_name?skill.icon_name:""}`)
               
-              p= skill.description
-              //- img(src=`https://go-skill-icons.vercel.app/api/icons?i=`)
+              p(class="text-justify")= skill.description
+              img(class="my-4 mx-auto max-w-full min-h-12" src=`https://go-skill-icons.vercel.app/api/icons?i=${skill.tags.slice(0,14).join(',')}&perline=5&titles=true`)
 
           div(class="absolute left-0 p-8 w-full bg-white rounded-xl transition-transform border-1 aspect-square" style=`top: ${(skills.length)*12}px; z-index: ${skills.length+50}`)
             h2(class="text-8xl text-black font-bebas") My <br> Skills
 
+    script.
+      var skills = !{JSON.stringify(skills)}
     script(src="/javascripts/index.js" type="module")

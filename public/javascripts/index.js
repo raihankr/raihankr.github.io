@@ -8,6 +8,7 @@ const $sun = $('#sun');
 const $moon = $('#moon');
 const $landscape = $('#landscape');
 const $skills = $('#skills');
+const $skillTitle = $('#skill-title');
 const $prevSkill = $('#prev-skill');
 const $nextSkill = $('#next-skill');
 const $closeSkill = $('#close-skill');
@@ -15,7 +16,7 @@ const $closeSkill = $('#close-skill');
 const skyColorTop = d3.interpolateRgb('#00bcff', '#0A2342');
 const skyColorBottom = d3.interpolateRgb('white', '#3E1F47');
 
-const totalSkills = $('[name=skills]').length;
+const totalSkills = skills.length;
 
 $main.on('scroll', async function () {
   const scrollPercentage = $main.scrollTop() / window.outerHeight;
@@ -54,7 +55,7 @@ $main.on('scroll', async function () {
   if (scrollPercentage < 2.5) {
     // Show landscapes
     $main.css('background', 'transparent');
-    $hero.find('.fixed').css('display', 'fixed');
+    $hero.find('.fixed').css('display', 'initial');
   } else {
     // Hide landscapes
     $main.css('background', '#003030');
@@ -64,23 +65,22 @@ $main.on('scroll', async function () {
 
 let selectedSkill = -1;
 
+// Navigating between skills folder
 $prevSkill.on('click', function () {
   $($('[name=skills]')[selectedSkill - 1]).trigger('click');
 });
-
 $nextSkill.on('click', function () {
   $($('[name=skills]')[selectedSkill + 1]).trigger('click');
 });
-
 $closeSkill.on('click', function () {
   $('[name=skills]:checked').prop('checked', false);
-  selectedSkill = -1;
   $skills.trigger('input');
 });
 
 $skills.on('input', function () {
-  selectedSkill = +$('[name=skills]:checked').val();
+  selectedSkill = +($('[name=skills]:checked').val() ?? -1);
 
+  // Control navigation button availability
   if (selectedSkill < 1) {
     $prevSkill.prop('disabled', true);
   } else {
@@ -91,17 +91,27 @@ $skills.on('input', function () {
   } else {
     $nextSkill.prop('disabled', false);
   }
-  if (selectedSkill > -1) {
-    $closeSkill.prop('disabled', false);
-    console.log($closeSkill)
-  } else {
+  if (selectedSkill < 0) {
     $closeSkill.prop('disabled', true);
+  } else {
+    $closeSkill.prop('disabled', false);
   }
 
-  if (selectedSkill > -1) {
-    $('#skills-folder>*').slice(selectedSkill + 1).css('translate', '0 100%');
-    $('#skills-folder>*').slice(0, selectedSkill + 1).css('translate', '0 0');
-  } else {
-    $('#skills-folder>*').css('translate', '0 0');
-  }
+  // Show specified skill
+  
+    if (selectedSkill > -1) {
+      let folderHeight = $('#skills-folder>*')[selectedSkill].offsetHeight;
+      $('#skills-folder>*').slice(selectedSkill + 1).css('translate', `0 ${folderHeight}px`);
+      $('#skills-folder>*').slice(0, selectedSkill + 1).css('translate', '0 0');
+    } else {
+      $('#skills-folder>*').css('translate', '0 0');
+    }
+    $skillTitle.fadeIn('fast');
+    $skillTitle.fadeOut('fast', function () {
+      if (selectedSkill > -1) {
+        $skillTitle.html(skills[selectedSkill].title);
+      } else {
+        $skillTitle.html('What Can <br> I Do?');
+      }
+    });
 });
