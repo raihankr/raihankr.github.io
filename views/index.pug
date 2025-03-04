@@ -40,19 +40,19 @@ html
         img#moon(class="fixed h-20 pointer-events-none -z-40 top-1/5 right-1/5 translate-y-[100vh] translate-x-2/1" src="/images/moon.svg" alt="Moon")
 
       section#skills(class="block relative px-8 pt-48 min-h-screen bg-[#003030] [--ss:0]")
-        //- h1#skills-title(class="hidden text-3xl text-white font-lobster") My skills
-        //- h2(class="text-7xl text-white font-bebas") skills.web_dev.title
+        h2(class="text-7xl text-white font-bebas") What Can <br> I Do?
 
-        div#skills-folder(class="absolute w-4/5 centerx centery aspect-square")
-          div(class="absolute top-0 left-0 z-50 p-8 w-full bg-white rounded-xl transition-transform border-1 aspect-square")
-            h2(class="text-8xl text-black font-bebas") My <br> Skills
-
+        div#skills-folder(class="relative mt-8 w-4/5 aspect-square")
           each skill, index in skills
-            div(class=`absolute left-0 p-8 w-full bg-white rounded-xl border-black transition-transform border-1 aspect-square ${index ? "" : "rounded-tl-none"}` style=`top: ${-(index+1)*12}px; z-index: ${49-index}`)
+            div(class=`absolute left-0 p-4 w-full bg-white rounded-xl border-black transition-transform border-1 aspect-square ${index ? "" : "rounded-tl-none"}` style=`top: ${(index)*12}px; z-index: ${50+index}`)
               label(for="skills-"+index class="absolute bottom-full p-1 w-8 bg-white rounded-md rounded-b-none border-b-0 left-(--left) aspect-square border-1" style=`--left: ${index*2.2}rem`)
                 input(id="skills-"+index value=index type="radio" name="skills" class="hidden peer")
                 img(class="w-full h-full bg-black mask-(--icon) mask-center mask-cover peer-checked:bg-red-500" style=`--icon: url('${skill.icon}')`)
               p= skill.description
+              //- img(src=`https://go-skill-icons.vercel.app/api/icons?i={skills}`)
+
+          div(class="absolute left-0 p-8 w-full bg-white rounded-xl transition-transform border-1 aspect-square" style=`top: ${(skills.length)*12}px; z-index: ${skills.length+50}`)
+            h2(class="text-8xl text-black font-bebas") My <br> Skills
 
     script(src="https://code.jquery.com/jquery-3.7.1.min.js")
     script(src="/javascripts/index.js" type="module")

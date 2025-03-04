@@ -40,37 +40,26 @@ $main.on('scroll', async function () {
     $landscape.css('scale', 1);
   }
 
+  if (scrollPercentage < 2) {
+    $skills.children().fadeOut();
+  } else {
+    $skills.children().fadeIn();
+  }
+
   if (scrollPercentage < 2.5) {
     // Show landscapes
     $main.css('background', 'transparent');
     $hero.find('.fixed').css('display', 'initial');
-
-    $skills.children().each((index, child) => {
-      $(child).fadeOut();
-    });
   } else {
     // Hide landscapes
     $main.css('background', '#003030');
     $hero.find('.fixed').css('display', 'none');
-
-    $skills.children().each((index, child) => {
-      $(child).fadeIn();
-    });
   }
-  if (scrollPercentage < 3.5) {
-    $skills.children().each((child) => {
-      
-    });
-  } else {
-    
-  }
-
-  // console.log(scrollPercentage);
 });
 
 $('input[name=skills]').on('click', function () {
   let selectedSkill = +$('input[name=skills]:checked').val();
 
-  $('#skills-folder>*').slice(0, selectedSkill + 1).css('translate', '0 100%');
-  $('#skills-folder>*').slice(selectedSkill + 1).css('translate', '0 0');
+  $('#skills-folder>*').slice(selectedSkill + 1).css('translate', '0 100%');
+  $('#skills-folder>*').slice(0, selectedSkill + 1).css('translate', '0 0');
 });
