@@ -4,3 +4,4 @@ Personal\ Site.code-workspace
 node_modules
 *.env
 .env*.local
+tailwind.config.js
