@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js",
-    "dev": "nodemon ./index.js",
-    "tailwindcss": "npx @tailwindcss/cli -i public/stylesheets/input.css -o public/stylesheets/output.css --watch"
+    "start": "bun ./index.js",
+    "dev": "bun --watch ./index.js",
+    "build:css": "bun tailwindcss -i public/stylesheets/input.css -o public/stylesheets/output.css --watch"
   },
   "author": "Raihan Khairul Rochman",
   "license": "ISC",
