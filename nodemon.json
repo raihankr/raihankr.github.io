@@ -1,9 +1,0 @@
-{
-  "restartable": "rs",
-  "watch": ["index.js", "app.js", "routes/", "utils/"],
-  "env": {
-    "NODE_ENV": "development"
-  },
-  "verbose": true,
-  "ext": ""
-}
