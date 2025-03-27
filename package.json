@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "bun ./index.js",
-    "dev": "bun --watch ./index.js",
-    "build:css": "bun tailwindcss -i public/stylesheets/input.css -o public/stylesheets/output.css --watch"
+    "dev": "concurrently -k \"npm run dev:server\" \"npm run dev:css\"",
+    "dev:server": "bun --watch ./index.js",
+    "dev:css": "tailwindcss -i public/stylesheets/input.css -o public/stylesheets/output.css --watch",
+    "build": "tailwindcss -i public/stylesheets/input.css -o public/stylesheets/output.css"
   },
   "author": "Raihan Khairul Rochman",
   "license": "ISC",
@@ -23,6 +25,7 @@
   "devDependencies": {
     "@iconify-json/codicon": "^1.2.12",
     "@iconify/tailwind4": "^1.0.6",
+    "concurrently": "^9.1.2",
     "nodemon": "^3.1.9"
   }
 }
