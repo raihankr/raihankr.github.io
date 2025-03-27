@@ -1,0 +1,153 @@
+@plugin "@iconify/tailwind4";
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Metrophobic&family=Monoton&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-palegreen: #a9e6b0;
+  --color-green: #40ff80;
+  --color-cyan: #40ffff;
+  --color-orange: #ff8040;
+  --color-yellow: #ffff40;
+
+  --text-sm: 0.75rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.375rem;
+  --text-4xl: 3.5rem; /* Updated */
+  --text-5xl: 4rem;   /* Updated */
+  --text-6xl: 5.125rem; /* Updated */
+  --text-7xl: 6rem;   /* Added */
+
+  --font-family-inter: 'Inter';
+  --font-family-work-sans: 'Work Sans';
+  
+  --shadow-soft-md: 4px 4px 4px 0px rgba(0, 0, 0, .25);
+  --shadow-solid-md: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+@theme {
+  --font-bebas: 'Bebas Neue';
+  --font-poppins: 'Poppins';
+  --font-montserrat: 'Montserrat';
+  --font-quicksand: 'Quicksand';
+  --font-lobster: 'Lobster';
+  --font-monoton: 'Monoton';
+  --font-work-sans: 'Work Sans';
+  --font-inter: 'Inter';
+  
+  --breakpoint-sm: 481px;
+  --breakpoint-md: 769px;
+  --breakpoint-lg: 1025px;
+  --breakpoint-xl: 1281px;
+}
+
+@layer base {
+  html {
+    @apply lowercase bg-white font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold font-work-sans;
+  }
+
+  h1 {
+    @apply text-5xl font-normal normal-case md:text-7xl;
+    &>.sub {
+      @apply text-xl md:text-3xl;
+    }
+  }
+
+  h2 {
+    @apply text-4xl md:text-6xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+}
+
+@layer components {
+  .line {
+    @apply border-black content-none;
+    
+    &.horizontal,
+    &.x {
+      @apply h-0 border-t;
+    }
+
+    &.vertical,
+    &.y {
+      @apply w-0 border-r;
+    }
+  }
+
+  .circle {
+    @apply bg-black rounded-full size-10 aspect-square;
+  }
+
+  .triangle {
+    @apply w-0 h-0 border-x-transparent border-t-black border-t-40 border-x-20;
+  }
+}
+
+@utility triangle-* {
+  --half-base: calc(--value(integer) / 2);
+  border-top-width: calc(var(--spacing) * --value(integer));
+  border-left-width: calc(var(--spacing) * var(--half-base));
+  border-right-width: calc(var(--spacing) * var(--half-base));
+}
+
+@utility md-only {
+  @apply hidden md:display-initial;
+}
+
+@utility display-initial {
+  display: initial;
+}
+
+@utility button-icon {
+  @apply size-12 disabled:opacity-20;
+  &>* {
+    @apply size-full;
+  }
+  &:not(*:disabled) {
+    @apply hover:scale-120 active:scale-120 active:mix-blend-difference;
+  }
+}
+
+@utility centerx {
+  @apply left-1/2 -translate-x-1/2;
+}
+
+@utility centery {
+  @apply top-1/2 -translate-y-1/2;
+}
+
+@utility mask-* {
+  -webkit-mask-image: --value([*]);
+  mask-image: --value([*]);
+}
+
+@utility mask-cover {
+  mask-size: cover;
+}
+
+@utility mask-center {
+  mask-position: center;
+}
+
+@utility scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+      @apply hidden;
+  }
+}

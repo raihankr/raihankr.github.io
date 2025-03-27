@@ -1,0 +1,93 @@
+[
+  {
+    "title": "Web <br> Development",
+    "description": "Have experience in building backend and frontend of websites. Including custom server and API building, as well as making interactive and unique user interfaces.",
+    "tags": [
+      "html",
+      "css",
+      "js",
+      "ts",
+      "php",
+      "react",
+      "nodejs",
+      "bun",
+      "jquery",
+      "express",
+      "pug",
+      "livewire",
+      "tailwindcss",
+      "githubpages",
+      "netlify",
+      "vercel"
+    ],
+    "icon_name": "icon-[codicon--globe]",
+    "color": "white",
+    "bg_image": null,
+    "decoration": null
+  },
+  {
+    "title": "Game <br> Development",
+    "description": "Bringing unique and fun experiences through video games, with experience in 2D game development, as well as game design and game mechanics.",
+    "tags": [
+      "godot",
+      "pygame"
+    ],
+    "icon_name": "icon-[codicon--game]",
+    "color": "white",
+    "bg_image": null,
+    "decoration": null
+  },
+  {
+    "title": "Machine <br> Learning",
+    "description": "Having knowledge in machine learning and data science, including data analysis, data visualization, and machine learning model building.",
+    "tags": [
+      "python",
+      "numpy",
+      "pandas",
+      "matplotlib",
+      "scikitlearn",
+      "tensorflow",
+      "jupyter",
+      "kaggle"
+    ],
+    "icon_name": "icon-[codicon--chip]",
+    "color": "white",
+    "bg_image": null,
+    "decoration": null
+  },
+  {
+    "title": "Mobile <br> Development",
+    "description": "Having knowledge and bare experience in making multiplatform mobile application using React Native.",
+    "tags": [
+      "reactnative",
+      "android",
+      "java",
+      "kotlin",
+      "expo"
+    ],
+    "icon_name": "icon-[codicon--device-mobile]",
+    "color": "white",
+    "bg_image": null,
+    "decoration": null
+  },
+  {
+    "title": "Miscellaneous",
+    "description": "Other skills that I have, including graphic design, devops, and database management.",
+    "tags": [
+      "illustrator",
+      "figma",
+      "canva",
+      "word",
+      "excel",
+      "github",
+      "postgresql",
+      "vscode",
+      "c",
+      "cpp"
+    ],
+    "icon_name": "icon-[codicon--symbol-misc]",
+    "color": "white",
+    "bg_image": null,
+    "decoration": null
+  }
+]

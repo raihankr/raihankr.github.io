@@ -1,0 +1,65 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Raihan Khairul Rochman | Portoflio | Home
+    link(rel="stylesheet" href="/stylesheets/output.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js")
+
+  body(class="overflow-x-hidden mx-auto")
+    // Navbar
+    nav(class="fixed z-50 content-center px-4 h-12 rounded-full border border-white border-opacity-20 translate-y-4 centerx backdrop-blur-md w-9/10 bg-[#fff8]")
+      p(class="text-lg font-bold leading-12") Han &bullet; 
+        span(class="font-normal") Software Enthusiast
+
+    main(class="overflow-x-hidden overflow-y-scroll relative w-full h-screen scrollbar-hide")
+      div(class="relative h-screen w-svw snap-start")
+        // Headlines
+        div(class="absolute px-8 w-svw top-3/5")
+          h1(class="absolute bottom-full text-4xl font-poppins") Turning Ideas <br> Into Digital Reality
+          h2(class="inline px-2 text-sm bg-white rounded-2xl -z-10 font-poppins") Raihan Khairul Rochman
+
+      div(class="relative w-svw snap-start h-[150vh]")
+        // Summary
+        div(class="absolute px-8 w-svw top-[50vh]")
+          h2(class="block px-2 text-sm text-justify text-white -z-10 font-poppins") A software engineering student at SMKN 4 Bandung and machine learning enthusiast. I’ve been learning about programming since middle school and I have a good interest in learning and adapting to new technologies. Currently, I have made some projects in web development and game development. I’m looking forward to create mobile application and machine learning projects. My goal is to create innovative programs and solving in-real-life’s problem.
+
+      section#hero
+        // Background
+        div#hero-background(class="fixed top-0 bg-gradient-to-b from-sky-400 -z-50 h-svh w-svw to-sky-100")
+        // Landscape
+        img#landscape(class="object-cover fixed -bottom-1 pointer-events-none h-[30vh]" src="/images/landscape.svg" alt="Landscape")
+        // Stars
+        img#stars(class="object-cover fixed top-0 left-0 rotate-90 pointer-events-none h-lvw w-svh -z-40" src="/images/stars.svg" alt="Stars")
+        // Hot Air Balloon
+        img#hot-air-balloon(class="fixed pointer-events-none -z-10 bottom-[60svh] left-[10vw] h-[18vh]" src="/images/hot_air_balloon.svg" alt="Hot Air Balloon")
+        // Sun
+        img#sun(class="fixed h-20 pointer-events-none -z-40 top-1/5 right-1/5" src="/images/sun.svg" alt="Sun")
+        // Moon
+        img#moon(class="fixed h-20 pointer-events-none -z-40 top-1/5 right-1/5 translate-y-[100vh] translate-x-2/1" src="/images/moon.svg" alt="Moon")
+
+      form#skills(class="block relative px-8 pt-48 min-h-[150svh] bg-[#003030] [--ss:0]")
+        h2#skill-title(class="text-7xl text-white font-bebas") What Can <br> I Do?
+
+        div(class="block text-right text-white")
+          input#prev-skill(type="button" class="button-icon icon-[codicon--arrow-left]" disabled)
+          input#next-skill(type="button" class="button-icon icon-[codicon--arrow-right]")
+          input#close-skill(type="button" class="button-icon icon-[codicon--close]" disabled)
+
+        div#skills-folder(class="relative mt-12 w-full aspect-square")
+          each skill, index in skills
+            div(class=`absolute left-0 p-8 w-full bg-white rounded-xl border-black transition-transform duration-400 border-1 aspect-square ${index ? "" : "rounded-tl-none"}` style=`top: ${(index)*12}px; z-index: ${50+index}`)
+              label(for="skills-"+index class="absolute bottom-full p-1 w-12 bg-white rounded-md rounded-b-none border-b-0 left-(--left) aspect-square border-1" style=`--left: ${index*3}rem`)
+                input(id="skills-"+index value=index type="radio" name="skills" class="hidden peer")
+                span(class=`w-full h-full text-black peer-checked:text-red-500 ${skill.icon_name?skill.icon_name:""}`)
+              
+              p(class="text-justify")= skill.description
+              img(class="my-4 mx-auto max-w-full min-h-12" src=`https://go-skill-icons.vercel.app/api/icons?i=${skill.tags.slice(0,14).join(',')}&perline=5&titles=true`)
+
+          div(class="absolute left-0 p-8 w-full bg-white rounded-xl transition-transform border-1 aspect-square" style=`top: ${(skills.length)*12}px; z-index: ${skills.length+50}`)
+            h2(class="text-8xl text-black font-bebas") My <br> Skills
+
+    script.
+      var skills = !{JSON.stringify(skills)}
+    script(src="/javascripts/index.js" type="module")

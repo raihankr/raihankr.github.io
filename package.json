@@ -4,16 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tailwindcss": "npx @tailwindcss/cli -i public/style/input.css -o public/style/output.css --watch",
-    "dev": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "bun ./index.js",
+    "dev": "concurrently -k \"npm run dev:server\" \"npm run dev:css\"",
+    "dev:server": "bun --watch ./index.js",
+    "dev:css": "tailwindcss -i public/stylesheets/input.css -o public/stylesheets/output.css --watch",
+    "build": "tailwindcss -i public/stylesheets/input.css -o public/stylesheets/output.css"
   },
   "author": "Raihan Khairul Rochman",
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/cli": "^4.0.6",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
     "express": "^4.21.2",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
     "pug": "^3.0.3",
     "tailwindcss": "^4.0.6"
+  },
+  "devDependencies": {
+    "@iconify-json/codicon": "^1.2.12",
+    "@iconify/tailwind4": "^1.0.6",
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.9"
   }
 }
