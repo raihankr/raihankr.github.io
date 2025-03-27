@@ -7,7 +7,11 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+const contents = require('./utils/contents.js');
+
 var app = express();
+
+app.locals.contents = contents;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
